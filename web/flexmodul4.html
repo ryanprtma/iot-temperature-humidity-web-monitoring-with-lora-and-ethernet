@@ -1,0 +1,148 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+.singledata {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 25%;
+    padding: 20px;
+    border-radius: 13px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    /*margin: 0 auto;*/
+    background: rgb(255, 255, 255, .2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.temp {
+    display: flex;
+    flex-direction: column;
+    /* flex-basis: 50%; */
+    border-radius: 13px;
+}
+
+.temp-icon {
+    flex-flow: column;
+    width: 20%;
+    align-items: flex-start;
+    justify-content: flex-end;
+    display: flex;
+}
+
+/* .temp-icon img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10%;
+} */
+
+.temp-icon #suhu {
+    width: 80px;
+    height: 80px;
+    margin-bottom: -10%;
+}
+
+.temp-icon #humi {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20%;
+}
+
+.tempicon {
+    margin-top: 50px;
+    margin-left: 50px;
+    text-align: left;
+}
+
+.kota {
+    font-size: 30px;
+    margin-left: 50px;
+    margin-top: 40px;
+}
+
+.jam {
+    font-size: 16px;
+    font-family: "OpenSans-SemiBold";
+    color: #c9b9d8;
+    margin-left: 51px;
+    text-align: left;
+    margin-top: 5px;
+
+}
+
+.suhu {
+    font-family: "OpenSans-SemiBold";
+    font-size: 82px;
+    padding: 0px;
+    margin: 0px 0px 0px 50px;
+    text-align: left;
+    /* margin-left: 50px; */
+    color: white;
+}
+
+.humidity {
+    margin-left: 50px;
+    /* margin-top: 0; */
+    line-height: 0;
+    font-size: 26px;
+    text-align: left;
+}
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="singledata">
+        <div class="temp">
+          <?php 
+            $tampil = mysqli_query($koneksi, "SELECT * FROM datasensor WHERE id IN (SELECT MAX(id) FROM datasensor) LIMIT 1");
+            $data = mysqli_fetch_assoc($tampil);
+            $jam=$data['time'];
+            // echo date ("d/F/Y", strtotime($jam));
+            date_default_timezone_set('Asia/Jakarta');
+            $stringDate = date('H:i');
+          ?>
+            <div class="kota">Inderalaya, Sumatera Selatan</div>
+            <!-- <div class="jam">Suhu Per <?php echo date ("d/F/Y", strtotime($jam));?> </div> -->
+            <div class="jam">Per <?php echo date ("H.i A", strtotime($jam));?> </div>
+            <div class="suhu">
+              <?=$data['suhu'] ?>°C
+              <img id="astronaut" src="icons/astronaut/astronautblack6.gif" alt="astronaut" style="width:100px; float:right;">
+            </div> 
+            <div class="humidity">Humidity : <?=$data['kelembaban'] ?>%
+          </div>
+        </div> 
+        <div class="temp-icon">
+        <?php        
+            $ambildata = mysqli_query($koneksi, "SELECT * FROM datasensor WHERE id IN (SELECT MAX(id) FROM datasensor) limit 1");
+            $datas = mysqli_fetch_assoc($ambildata);
+            $tempdata = $datas['suhu'];
+            // $tempdata = 100;
+            date_default_timezone_set('Asia/Jakarta');
+            $waktu = date('H:i');
+            if ($tempdata >= 0 && $tempdata <= 30 && $waktu >='05:30' && $waktu <='17:45' ) :?>
+            <img id="suhu" src="icons/03dw.png" alt="suhu rendah">
+            <img id="humi" src="icons/50dw.png" alt="">
+            <?php elseif ($tempdata >= 31 && $tempdata <=40 && $waktu>='05:30' && $waktu<='17:45'): ?>
+              <img id="suhu" src="icons/02dw.png" alt="suhu normal">
+              <img id="humi" src="icons/50dw.png" alt="">
+            <?php elseif ($tempdata >= 41 && $tempdata <=100 && $waktu>='05:30' && $waktu<='17:45'): ?>
+              <img id="suhu" src="icons/01dw.png" alt="suhu tinggi">
+              <img id="humi" src="icons/50dw.png" alt="">
+            <?php elseif ($tempdata >= 0 && $tempdata <=30 ): ?>
+              <img id="suhu" src="icons/03nw.png" alt="">
+              <img id="humi" src="icons/50nw.png" alt="">
+            <?php elseif ($tempdata >= 31 && $tempdata <=40 ): ?>
+              <img id="suhu" src="icons/02nw.png" alt="">
+              <img id="humi" src="icons/50nw.png" alt="">
+            <?php else: ?>
+              <img id="suhu" src="icons/01nw.png" alt="">
+              <img id="humi" src="icons/50nw.png" alt="">
+        <?php endif; ?>
+      </div>
+    </div> 
+</body>
+</html>

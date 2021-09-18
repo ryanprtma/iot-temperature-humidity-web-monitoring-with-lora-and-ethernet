@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+.rata-rata {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 50%;
+    border-radius: 13px;
+    /* background: white; */
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+}
+
+.rata_rata {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    margin-right: 10px;
+    border-radius: 13px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.sub-text,
+.subsub-text {
+    display: flex;
+    /* flex-direction: row; */
+    flex-basis: 30%;
+    /* margin-right: 10px; */
+    border-radius: 13px;
+    color: black;
+    /* font-size: 12px; */
+    /* margin-top: -20px; */
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+}
+
+.subsub-text {
+    margin-top: -20px;
+}
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="rata-rata">
+    <?php
+        $result= mysqli_query($koneksi, "SELECT AVG(suhu) AS rata_rata_suhu FROM datasensor WHERE tgl_hari_ini='".$tgl_hari_ini."' ");
+        $row_ = mysqli_fetch_assoc($result);
+        $average_suhu = $row_['rata_rata_suhu'];
+        $rata_rata_suhu = number_format($average_suhu);
+        $result_= mysqli_query($koneksi, "SELECT AVG(kelembaban) AS rata_rata_kelembaban FROM datasensor WHERE tgl_hari_ini='".$tgl_hari_ini."' ");
+        $row__ = mysqli_fetch_assoc($result_);
+        $average_kelembaban = $row__['rata_rata_kelembaban'];
+        $rata_rata_kelembaban = number_format($average_kelembaban);
+        ;
+    ?>
+    <div class="rata_rata" id="suhu">
+        <div class="sub-text" style="color:black;font-size:12px;">
+        <span style="margin-left:20px;"><p align="left">Rata-rata<br>suhu</p></span>
+        <!-- <img src="assets/img/temp.png" width="10" style="float: right;"> -->
+        </div>
+        <div class="subsub-text">
+        <ul style="list-style-type:none;align=left;">
+            <li><span style="font-family: OpenSans-Semibold;font-size:50px;color:#524e55;margin-left:-0.5em;"><?=$rata_rata_suhu ?>°C</span>
+        </ul>
+        </div>
+        <div class="sub-text">
+        <p style="color:black;font-size:12px;margin-left:50px;"> data per</p>
+        </div> 
+    </div>
+
+    <div class="rata_rata" id="kelembaban" >
+        
+    <div class="sub-text" style="color:black;font-size:12px;">
+        <span style="margin-left:20px;"><p align="left">Rata-rata<br>kelembaban</p> </span>
+        <!-- <img src="assets/img/temp.png" width="10" style="float: right;"> -->
+        </div>
+        <div class="sub-text" style="margin-top:-20px;">
+        <ul style="list-style-type:none;align=left;">
+            <li><span style="font-family: OpenSans-Semibold;font-size:50px;color:#524e55;margin-left:-0.5em;"><?=$rata_rata_kelembaban?>%</span>
+        </ul>
+        </div>
+        <div class="sub-text">
+        <p style="color:black;font-size:12px;margin-left:50px;">data per</p>
+        </div> 
+    </div>
+</body>
+</html>

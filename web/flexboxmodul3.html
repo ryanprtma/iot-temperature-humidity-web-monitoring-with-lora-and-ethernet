@@ -1,0 +1,125 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 50%;
+        padding: 1%;
+        background-color: blueviolet; 
+        justify-content: center;
+    }
+
+    .container > div{
+        margin: 1%;
+        /* flex-basis: 30%; */
+        padding: 1%;
+        border-radius: 12px;
+        display: flex;  
+        background-color: white;
+    }
+
+    .item1 {
+        display: flex;
+        flex-basis: 20%;
+        justify-content: flex-start;
+        font-size: 32px;
+    }
+
+    .item1 p {
+font-family: "OpenSans-SemiBold";
+padding: 0;
+margin: 0;
+font-size: 30px;
+text-align: left;
+line-height: 95%;
+    }
+
+    .item1 span{
+        font-size: 16px;
+    }
+
+    .item2 {
+    display: flex;
+    flex-basis: 40%;
+    justify-content: space-between;        
+    }
+
+    .item2 > div {
+        border-radius: 13px;
+        background-color: teal;
+        width: 100%;
+    }
+
+    .one {
+        display: flex;
+        flex-flow: column;
+        flex-basis: 75%;
+        align-items: flex-start;
+        justify-content: center;
+        font-size: 82px;
+        line-height: 95%;
+    }
+
+    /* .one p{
+        padding: 0;
+        margin: 0;
+        font-size: 82px;
+        line-height: 50%;
+    }
+    
+    .datap{
+        font-size: 26px;
+    } */
+    
+    /* .one>font{
+        padding: 0;
+        margin: 0;
+        font-size: 120px;
+        line-height: 50%;
+    }
+
+    .one font span{
+        font-size: 12px;
+    } */
+
+    .two {
+        display: flex;
+        flex-basis: 20%;
+        flex-flow: column;
+        align-items: flex-start;
+        justify-content: center;
+    } 
+
+    .item3 {
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="item1"><p>Inderayala, Smatera Selatan<br><span>Per  ...</span></p></div>
+        <div class="item2">
+            <div class="one">
+                <!-- <font>37</font><br>
+                <font>Humidity</font> -->
+                
+                <!-- <p>37<br><span class="datap">humidity</span></p> -->
+
+                <!-- <font>37</font>
+                <font style="font-size:26px;">humidity</font> -->
+
+                37<span style="font-size: 26px;">humidity</span>
+            </div>
+            <div class="two">37 <br> <span>37</span></div>
+        </div>
+        <!-- <div class="item3">pfdfsdf</div> -->
+    </div>
+</body>
+</html>
