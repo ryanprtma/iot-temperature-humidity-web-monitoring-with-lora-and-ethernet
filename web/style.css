@@ -696,7 +696,7 @@ footer {
         flex-direction: column;
         /* properti lainnya */
         width: 340px;
-        height: 1285px;
+        height: 100%;
         padding: 10px;
         margin-top: 50px;
         margin: auto;
@@ -714,7 +714,7 @@ footer {
 
     .singledata {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         flex-basis: 46%;
         /*padding: 20px;*/
         border-radius: 13px;
@@ -724,22 +724,230 @@ footer {
 
     }
 
-    .kota {
-        font-size: 16px;
-        margin-left: 20px;
-        margin-top: 5px;
+    .singledata>div {
+        display: flex;
+        margin: 1%;
+        /* flex-basis: 30%; */
+        padding: 1%;
+        border-radius: 12px;
+        /* background-color: rgb(104, 104, 104); */
+    }
 
+    .kota {
+        display: flex;
+        flex-basis: 20%;
+        justify-content: flex-start;
+        /* font-size: 30px; */
+        /* text-align: left; */
+    }
+
+    .kota>p {
+        padding: 0;
+        margin: 0;
+        font-size: 20px;
+        text-align: left;
+        line-height: 95%;
+    }
+
+    .kota span {
+        font-family: "OpenSans-SemiBold";
+        font-size: 10px;
+        color: #c9b9d8;
+    }
+
+    .temp-humi {
+        display: flex;
+        flex-direction: row;
+        flex-basis: 40%;
+        justify-content: space-between;
+        /* background-color: #709FB0; */
+    }
+
+    .temp-humi>div {
+        /* margin: 1%; */
+        /* padding: 3%; */
+        border-radius: 13px;
+        /* background-color: teal; */
+        /* width: 100%; */
     }
 
     .suhu {
+        display: flex;
+        flex-basis: 70%;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 80px;
+        /* line-height: 40%; */
         font-family: "OpenSans-SemiBold";
-        font-size: 82px;
-        padding: 0px;
-        margin-top: 10px;
-        text-align: left;
-        margin-left: 50px;
-        color: white;
 
+    }
+
+    .suhu p {
+        font-family: "OpenSans-SemiBold";
+        padding: 0;
+        margin: 5% 0 0;
+        /* margin-bottom: 0; */
+        /* font-size: 80px; */
+        text-align: left;
+        line-height: 50%;
+    }
+
+    .humi {
+        font-size: 26px;
+    }
+
+    .astronaut {
+        display: flex;
+        flex-basis: 20%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #astronaut {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .temp-icon {
+        flex-flow: column;
+        display: flex;
+        flex-basis: 20%;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .item3 {
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+
+    #temp {
+        max-width: 100%;
+        height: auto;
+
+        /* margin-bottom: -10%; */
+    }
+
+    #humi {
+        max-width: 100%;
+        height: auto;
+
+        /* margin-bottom: 20%; */
+    }
+
+    .statistik {
+        display: flex;
+        flex-direction: row;
+        flex-basis: 10%;
+        margin: 5px 0;
+        border-radius: 13px;
+        overflow-x: auto;
+    }
+
+    .statistik::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .max-min {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 50%;
+        /* margin-right: 10px; */
+        /* margin-left: 10px; */
+        border-radius: 13px;
+        background: white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .keterangan {
+        max-width: 100%;
+        height: auto;
+        font-size: 8px;
+        /* font-family: "OpenSans-SemiBold"; */
+        color: #524e55;
+        margin-top: 20px;
+    }
+
+    .keterangan>ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    #suhuTertinggi,
+    #suhuTerendah,
+    #kelembabanTertinggi,
+    #kelembabanTerendah,
+    #textDatamax-min {
+        width: 100%;
+    }
+
+    #suhuTertinggi img {
+        width: 5px;
+    }
+
+    #kelembabanTertinggi img {
+        width: 12px;
+    }
+
+    #suhuTertinggi hr,
+    #suhuTerendah hr,
+    #kelembabanTertinggi hr,
+    #kelembabanTerendah hr {
+        width: 80%;
+    }
+
+    #textDatamax-min center {
+        font-size: 12px;
+    }
+
+    .rataRata-Flex {
+        display: flex;
+        flex-direction: row;
+        flex-basis: 50%;
+        border-radius: 13px;
+        /* background: white; */
+    }
+
+    .rata_rata {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 50%;
+        margin-left: 10px;
+        border-radius: 13px;
+        background: rgb(255, 255, 255);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .rata_rata>div {
+        display: flex;
+        flex-basis: 30%;
+        padding: 5%;
+        margin: 1%;
+        border-radius: 12px;
+        background-color: white;
+    }
+
+    .item1 {
+        align-items: center;
+        justify-content: flex-start;
+        text-align: left;
+        font-size: 5px;
+        color: black;
+    }
+
+    .item2 {
+        align-items: center;
+        justify-content: center;
+        font-family: OpenSans-Semibold;
+        font-size: 25px;
+        color: #524e55;
+    }
+
+    .item3 {
+        align-items: center;
+        justify-content: flex-end;
+        font-size: 5px;
+        color: black;
     }
 
     .humidity {
@@ -758,6 +966,43 @@ footer {
         border-radius: 13px;
         margin-top: 10px;
         margin-bottom: 2px;
+    }
+
+    .kotak {
+        display: flex;
+        flex-direction: row;
+        /* properti lainnya */
+        width: 1000px;
+        height: px;
+        padding: 10px;
+        margin-top: 50px;
+        margin: auto;
+        transition: 0.3s;
+        /*background-color: #11C5C6;*/
+    }
+
+    .konten {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 100%;
+        text-align: center;
+        color: white;
+        padding: 10px;
+        font-size: 1.5em;
+        /*background-color: cornflowerblue;*/
+        transition: 0.3s;
+    }
+
+    .datarows {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 50%;
+        background: white;
+        /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
+        border-radius: 12px;
+        /*margin-top: 10px ;*/
+        margin-bottom: 20px;
+        transition: 0.3s;
     }
 
     aside {
