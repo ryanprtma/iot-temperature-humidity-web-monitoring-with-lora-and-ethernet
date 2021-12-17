@@ -690,12 +690,126 @@ footer {
     font-weight: bold;
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 567px) {
+    .jumbotron {
+        text-align: left;
+        padding: 1.5%;
+        font-size: 1em;
+        background-color: #6E3F98;
+        color: white;
+    }
+
+    .logo {
+        float: right;
+        position: relative;
+    }
+
+    #logoUnsri.logo {
+        width: 200px;
+    }
+
+    #logoElin.logo {
+        width: 60px;
+    }
+
+    #logoBp.logo {
+        width: 90px;
+    }
+
+    .teks-berjalan {
+        font-size: 1.25em;
+        font-family: "OpenSans-SemiBold";
+        padding: 15px 0px 15px 0px;
+        background: rgb(255, 255, 255, .4);
+        text-align: left;
+        color: white;
+    }
+
+    marquee {
+        scrolldelay: "10";
+        word-spacing: 5px;
+    }
+
+    nav {
+        height: 100px;
+        width: 100%;
+        justify-content: flex-start;
+        display: flex;
+        background: #CC4D4D;
+        position: sticky;
+        top: 0;
+    }
+
+    nav>ul {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        /* height: 52px; */
+        align-items: center;
+        /* margin-left: 160px; */
+        position: relative;
+    }
+
+    nav li {
+        display: inline-block;
+        list-style-type: none;
+    }
+
+    nav a {
+        font-family: "OpenSans-SemiBold";
+        font-size: 15px;
+        font-weight: 400;
+        text-decoration: none;
+        color: white;
+        display: block;
+    }
+
+    li a {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        margin: 0;
+        background: #CC4D4D;
+        color: white;
+        padding: 20px;
+        /* height: 84px; */
+        align-items: center;
+        position: relative;
+    }
+
+    li.active a {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        background: #AF4141;
+        color: white;
+        /* padding: 20px; */
+        /* height: 84px; */
+        align-items: center;
+        position: relative;
+
+    }
+
+    li#hover a:hover {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        background: #B94545;
+        color: white;
+        /* padding: 20px;
+        height: 84px; */
+        bottom: 0;
+        position: relative;
+        transition: 0.3s;
+    }
+
+
     .box {
         display: flex;
         flex-direction: column;
         /* properti lainnya */
-        width: 340px;
+        width: 100%;
         height: 100%;
         padding: 10px;
         margin-top: 50px;
@@ -718,7 +832,7 @@ footer {
         flex-basis: 46%;
         /*padding: 20px;*/
         border-radius: 13px;
-        margin-bottom: 2px;
+        margin-bottom: 5px;
         /*margin: 0 auto;*/
         background: rgb(255, 255, 255, .4);
 
@@ -793,7 +907,7 @@ footer {
     }
 
     .humi {
-        font-size: 26px;
+        font-size: 20px;
     }
 
     .astronaut {
@@ -921,7 +1035,7 @@ footer {
     .rata_rata>div {
         display: flex;
         flex-basis: 30%;
-        padding: 5%;
+        padding: 12px;
         margin: 1%;
         border-radius: 12px;
         background-color: white;
@@ -962,10 +1076,15 @@ footer {
         display: flex;
         flex-direction: row;
         flex-basis: 23%;
-        background: #C4C4C4;
+        background: #ffffff;
         border-radius: 13px;
         margin-top: 10px;
         margin-bottom: 2px;
+    }
+
+    #grafik-kelembaban>div {
+        width: 300px;
+        height: 264.64px;
     }
 
     .kotak {

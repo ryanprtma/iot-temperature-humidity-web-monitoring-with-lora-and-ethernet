@@ -31,7 +31,7 @@
 
 <body>
 <header>
-    <div class="jumbotron"> 
+    <div class="jumbotron" id="jumbotron"> 
           LABORATORIUM 
           <img class="logo" id="logoUnsri" src="assets/img/logo2.png">
           <img class="logo" id="logoElin" src="assets/img/logo3.png">
@@ -46,7 +46,7 @@
         <!-- <p>o<div class="logout"><a id="logout" href="logout.php">LOGOUT</a></div></p> -->
     </div> 
     </div> 
-    <nav>
+    <nav id="navbar">
         <ul>
           <li class="active" id="hover"><a href="index.php">HOME</a></li>
           <li  id="hover"><a href="dataharian.php">DATA HARIAN</a></li>
