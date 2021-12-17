@@ -287,7 +287,7 @@ var myBarChart = new Chart(ctx, {
 }
 });
 </script>
-
+<script src="nav.js"></script>
 </body>
 </html>
 
