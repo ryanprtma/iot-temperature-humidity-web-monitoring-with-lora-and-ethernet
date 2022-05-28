@@ -44,7 +44,7 @@ void loop()
     
     //Open a connection to the server
       HTTPClient http;
-      http.begin("http://fisika-mipa-unsri.com/api.php");
+      http.begin("https://fisika-mipa-unsri.com/api.php");
       http.addHeader("Content-Type", "application/x-www-form-urlencoded");
     //format your POST request.
       int httpResponseCode = http.POST("suhu=" + String(t) +"&kelembaban=" + String(h));
